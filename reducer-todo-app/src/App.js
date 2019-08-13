@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <TodoForm addTodo={addTodo} clear={clear} />
-      <TodoList todos = {state.todos} toggle={toggle} />
+      <TodoList todos = {state.todos} toggleCompleted={toggleCompleted} />
     </div>
   );
 }
