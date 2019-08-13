@@ -1,13 +1,13 @@
 import React from 'react';
 
-const TodoForm = ({addTodo, clear, task, handleTask}) => {
+const TodoForm = ({addTodo, clearCompleted, task, handleTask}) => {
   const handleSubmit = event => {
     event.preventDefault();
     addTodo(task);
   };
   const handleClear = event => {
     event.preventDefault();
-    clear();
+    clearCompleted();
   };
   return (
     <form onSubmit={handleSubmit}>

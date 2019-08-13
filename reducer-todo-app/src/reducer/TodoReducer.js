@@ -6,9 +6,9 @@ export const initialState = {
       completed: false
     },
     {
-      task: 'Learn about context',
+      task: 'Look over training kit',
       completed: true,
-      id: 3892987581
+      id: 38929875891
     }
   ],
   task: ''
@@ -32,13 +32,13 @@ export function todoReducer(state, action) {
           completed: false,
           id: Date.now()
         }),
-        task: ""
+        task: ''
       };
 
     case "CLEAR_COMPLETED":
       return {
         ...state,
-        todos: state.todos.filter(({ completed }) => !completed)
+        todos: state.todos.filter(({completed}) => !completed)
       };
     
     case "INPUT_TASK":
