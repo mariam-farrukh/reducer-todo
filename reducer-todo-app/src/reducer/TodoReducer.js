@@ -11,7 +11,7 @@ export const initialState = {
       id: 38929875891
     }
   ],
-  task: ''
+  // task: ''
 };
   
 export function todoReducer(state, action) {
@@ -32,7 +32,7 @@ export function todoReducer(state, action) {
           completed: false,
           id: Date.now()
         }),
-        task: ''
+        // task: ''
       };
 
     case "CLEAR_COMPLETED":

@@ -2,6 +2,7 @@ import React, {useReducer} from "react";
 import TodoList from "./TodoComponents/TodoList";
 import TodoForm from "./TodoComponents/TodoForm";
 import { initialState, todoReducer } from './reducer/TodoReducer.js'
+import './App.css'
 
 function App() {
   const [state, dispatch] = useReducer(todoReducer, initialState);
@@ -12,11 +13,14 @@ function App() {
 
   return (
     <div className="App">
-      <h3>Todo List</h3>
-        <div className="todo-body">
-          <TodoList todos = {state.todos} toggleCompleted={toggleCompleted} />
-          <TodoForm addTodo={addTodo} clearCompleted={clearCompleted} handleTask={handleTask} task={state.task}/>
-        </div>
+      <div className="Header">
+        <h3>Todo List</h3>
+      </div>
+      
+      <div className="todo-body">
+        <TodoList todos = {state.todos} toggleCompleted={toggleCompleted} />
+        <TodoForm addTodo={addTodo} clearCompleted={clearCompleted} handleTask={handleTask} task={state.task}/>
+      </div>
     </div>
   );
 }

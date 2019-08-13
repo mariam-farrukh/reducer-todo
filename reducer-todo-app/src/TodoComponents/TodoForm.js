@@ -1,4 +1,5 @@
 import React from 'react';
+import './TodoForm.css'
 
 const TodoForm = ({addTodo, clearCompleted, task, handleTask}) => {
   const handleSubmit = event => {
