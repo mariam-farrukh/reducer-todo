@@ -5,46 +5,20 @@ import { initialState, todoReducer } from './reducer/TodoReducer.js'
 import "./TodoComponents/Todo.css";
 
 function App() {
+  // Initialize useReducer
   const [state, dispatch] = useReducer(todoReducer, initialState);
-  console.log("state inside App", state.todoData);
 
-  const clearTodos = () => {
-    dispatch({ type: "clearTodo" });
-  };
-
-  const handleChange = event => {
-    event.preventDefault();
-    dispatch({
-      type: "field",
-      field: "task",
-      value: event.target.value
-    });
-  };
-
-  const addTodos = event => {
-    event.preventDefault();
-    dispatch({ type: "addTodo" });
-  };
-
-  const deleteItem = id => {
-    console.log("deleted");
-    const filteredItems = state.todoData.filter(item => {
-      return item.id !== id;
-    });
-    state.todoData = filteredItems;
-    console.log(state.todoData);
-  };
+  // Setup Functions that run dispatch which will be used to trigger actions and pass in parameters with payload
+  const toggleCompleted = id =>
+    dispatch({ type: "TOGGLE_COMPLETED", payload: id });
+  const addTodo = task => dispatch({ type: "ADD_TODO", payload: task });
+  const clear = () => dispatch({ type: "CLEAR" });
+  const handleChange = event =>
+    dispatch({ type: "UPDATE", payload: event.target.value });
 
   return (
-    <div>
-      <h1>Tasks</h1>
-      <TodoList toDoList={state.todoData} deleteItem={deleteItem} />
-      <TodoForm
-        clear={clearTodos}
-        add={addTodos}
-        toDoList={state.todoData}
-        handleChange={handleChange}
-      />
+    <div className="App">
+      <h1>Repeating step 1</h1>
     </div>
   );
 }
