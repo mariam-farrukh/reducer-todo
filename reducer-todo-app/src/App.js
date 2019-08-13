@@ -14,8 +14,8 @@ function App() {
     <div className="App">
       <h3>Todo List</h3>
         <div className="todo-body">
-          <TodoForm addTodo={addTodo} clear={clear} handleTask={handleTask}/>
           <TodoList todos = {state.todos} toggle={toggle} />
+          <TodoForm addTodo={addTodo} clear={clear} handleTask={handleTask}/>
         </div>
     </div>
   );
