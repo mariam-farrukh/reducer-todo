@@ -4,6 +4,11 @@ export const initialState = {
       task: "Learn about reducers",
       id: 3892987589,
       completed: false
+    },
+    {
+      task: 'Learn about context',
+      completed: true,
+      id: 3892987581
     }
   ],
   task: ''
@@ -36,7 +41,7 @@ export function todoReducer(state, action) {
         todos: state.todos.filter(({ completed }) => !completed)
       };
     
-    case "INPUT":
+    case "INPUT_TASK":
       return {
         ...state,
         task: action.payload

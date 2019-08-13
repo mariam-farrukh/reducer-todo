@@ -13,7 +13,7 @@ const TodoForm = ({addTodo, clear, task, handleTask}) => {
     <form onSubmit={handleSubmit}>
       <input type="text"
              name="task"
-             placeholder="new todo"
+             placeholder="add new task"
              onChange={handleTask}
              value={task} />
       <div className="todo-form-buttons">
