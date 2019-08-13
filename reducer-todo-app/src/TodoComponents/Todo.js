@@ -1,22 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Todo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      Todo: {
-        task: ""
-      }
-    };
-  }
-  render() {
-    console.log(this.props.todo);
-    return (
-      <>
-        <ul>
-          <li onClick={this.props.onClick}>{this.props.todo.task}</li>
-        </ul>
-      </>
-    );
-  }
-}
+const Todo = ({id, task, toggle, completed}) => {
+  return (
+    <div className={"todo-task" + (completed ? " todo-completed" : "")} onClick={() => toggle(id)}>
+      {task}
+    </div>
+  );
+};
+
+export default Todo;

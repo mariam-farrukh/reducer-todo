@@ -35,6 +35,12 @@ export function todoReducer(state, action) {
         ...state,
         todos: state.todos.filter(({ completed }) => !completed)
       };
+    
+    case "INPUT":
+      return {
+        ...state,
+        task: action.payload
+      }
 
     default:
       return state;
