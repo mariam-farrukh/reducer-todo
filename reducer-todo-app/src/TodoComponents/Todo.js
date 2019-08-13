@@ -13,9 +13,9 @@ export default class Todo extends Component {
     console.log(this.props.todo);
     return (
       <>
-        <ol>
+        <ul>
           <li onClick={this.props.onClick}>{this.props.todo.task}</li>
-        </ol>
+        </ul>
       </>
     );
   }
