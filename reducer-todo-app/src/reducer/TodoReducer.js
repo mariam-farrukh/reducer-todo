@@ -18,7 +18,7 @@ export function todoReducer(state, action) {
           todo.id === action.payload ? { ...todo, completed: !todo.completed } : todo
         )
       };
-      
+
     case "ADD_TODO":
       return {
         ...state,
@@ -30,16 +30,10 @@ export function todoReducer(state, action) {
         task: ""
       };
 
-    case "CLEAR":
+    case "CLEAR_COMPLETED":
       return {
         ...state,
         todos: state.todos.filter(({ completed }) => !completed)
-      };
-
-    case "UPDATE":
-      return {
-        ...state,
-        task: action.payload
       };
 
     default:
