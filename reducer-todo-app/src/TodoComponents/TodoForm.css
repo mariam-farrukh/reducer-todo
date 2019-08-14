@@ -1,0 +1,14 @@
+.todo-add{
+    border:none;
+    margin: 0.25em;
+    padding: 0.25em;
+    background-color:pink;
+    border-radius: 0.25em;
+}
+.todo-clear{
+    border:none;
+    margin: 0.25em;
+    padding: 0.25em;
+    background-color: pink;
+    border-radius: 0.25em;
+}
